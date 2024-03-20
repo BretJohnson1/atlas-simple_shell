@@ -5,24 +5,33 @@
  */
 char *take_input();
 {
+  /** Storage for our string*/
   char *buffer;
+  /**For keeping count which part of the buffer were at*/
   size_t n = 1;
+  /**Will check if lines only 1 byte*/
   ssize_t check;
+  /**So we can specifically call out '\n' and '\0'*/
   char new_line[] = {'\n', '\0'};
-
+/**Setting our input(buffer) to only take 255 chars(bytes)*/
   buffer = malloc(sizeof(char) * 255);
-
+/**Recieves the Input from STDIN(input) and feeds it to buffer and n */
   check = (getline(&buffer, &n, stdin));
+  /**Pretty much for if the user hits enter without typing anything*/
   if (check == 1)
   {
     free(buffer);
     return (NULL);
   }
+  /**If the buffer is empty*/
   if (buffer[0] == '\n' && buffer[1] == '\0')
+  /**Stop(command terminator)*/
     ;
   else
   {
+    /**strtok splits the input at new_line variable*/
     buffer = strtok(buffer, new_line);
+    /**checking for our only_spaces function and fills in accordingly*/
     if ((is_only_spaces(buffer)))
       ;
     {
@@ -40,10 +49,12 @@ char *take_input();
 
 int is_only_space(char *string)
 {
+  /**For the index of string*/
   int i = 0;
 
   while (string[i] != '\0')
   {
+    /**ASCII 32 = " ", This checks if this is all string is*/
     if (string[i] != 32)
       return (FALSE);
     i++;
@@ -73,7 +84,7 @@ char **split_string(char *string_to_split, char *delimiter)
   snprintf(copy_of_string, 255, "%s", string_to_split);
 /**For our tokens, determined by the number of spaces in the string*/
   ret_array = malloc(sizeof(char*) * (length + 1));
-  /**So we can get the tokens for a copy of the string*/
+  /**So we can access the string for tokens from a copy_of_string*/
   save_pointer = copy_of_string;
 /** Grabs the the tokens from the amount of length(length equals for grabtoks 4 times)*/
   for (i = 0; i < length; i++)
