@@ -36,3 +36,41 @@ typedef struct _SimpleShell
     char *os_command_path;
     char **command_args;
 }SimpleShell_t;
+
+/**
+*struct BuiltInCommand_s - information to build table of built in commands
+*@name: name of the command
+*@exec: function pointer to function which executes command
+*/
+typedef struct BuiltInCommand_s
+{
+    char *name;
+    void (*exec)(SimplyShell_t *self);
+}BuiltInCommand_t;
+
+void launch_repl(SimpleShell_t *self);
+void read_script(SimpleShell_t *shell);
+
+void create_shell(SimpleShell_t **shell, char **envp);
+void parse_line(SimpleShell_t *shell, char *new_line);
+void free_shell(SimpleShell_t *shell);
+void free_array(char **an_array);
+
+char *take_input();
+int is_only_spaces(char *string);
+int num_of_spaces(char *string, char *delimiter);
+char **split_string(char *string_to_split, char *delimiter);
+
+void (*get_builtin(char *command))(SimpleShell_t *);
+void clear_screen(SimpleShell_t *self);
+void quit_repl(SimpleShell_t *self);
+void print_env_variables(SimpleShell_t *self);
+char *_getenv(char **envp, char *key);
+
+char *find_command_path(SimpleShell_t *self);
+char *create_test_path(char *dir_path, char *command);
+void create_new_process(SimpleShell_t *shell);
+
+void throw_error(SimpleShell_t *shell, int error_num);
+
+#endif
