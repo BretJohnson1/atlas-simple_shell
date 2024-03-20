@@ -73,22 +73,23 @@ char **split_string(char *string_to_split, char *delimiter)
   char **ret_array;
   /**For the index(spot in array)*/
   int i = 0
-  /**length of the array using num_of_spaces*/
+  /**length of the array using num_of_spaces, returns the amount of tokens = length*/
   long int length = num_of_spaces(string_to_split, delimiter);
   /**Copy from the STDIN(input)*/
   char copy_of_string[255];
-  /**Next to are a must for strtok_r */
+  /**Next two are a must for strtok_r */
   char *save_pointer;
   char *grabtok;
-/**Takes input and stores in copy_of_string*/
+/**Takes input from string_to_split pointer and stores in copy_of_string*/
   snprintf(copy_of_string, 255, "%s", string_to_split);
-/**For our tokens, determined by the number of spaces in the string*/
+/**Memory allocated for a size by multiplying length times char(1) */
   ret_array = malloc(sizeof(char*) * (length + 1));
   /**So we can access the string for tokens from a copy_of_string*/
   save_pointer = copy_of_string;
-/** Grabs the the tokens from the amount of length(length equals for grabtoks 4 times)*/
+/** Grabs the the tokens from the amount of length exmp(length equals four so grabtoks 4 times)*/
   for (i = 0; i < length; i++)
   {
+    /**save_pointer = copy_of_string &save_pointer = */
     grabtok = strtok_r(save_pointer, delimiter, &save_pointer);
     ret_array[i] = malloc(sizeof(char) * 255);
     /**Allocating and storing each token from grabtok in an array index + 1*/
