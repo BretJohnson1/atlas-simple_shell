@@ -1,1 +1,23 @@
-suh dude
+NAME
+Simple Shell
+
+LIBRARY
+N/A
+
+SYNOPSIS
+N/A
+
+DESCRIPTION
+This simple shell recreations acts like your standard terminal, receiving input, evaluating input, implementing input and repeating. It is able to take basic commands to help the user navigate the terminal and execute basic systems and functions in the terminal.
+
+RETURN VALUE
+Upon succesfful return, the terminal will succesfully execute input commands.
+
+OPTIONS
+N/A
+
+EXAMPLES
+N/A
+
+AUTHOR
+Bret Johnson (co-conspirator: Isaac Edwards)
