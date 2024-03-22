@@ -31,8 +31,8 @@ char *find_command_path(SimpleShell_t *shell)
   return (NULL);
 }
 /**
- * create_test_path - Concatenate command argv[0] to each directory
- * @dir_path: pointer a one dir PATH
+ * create_test_path - Concatenate command argv[0] to each directory path
+ * @dir_path: pointer to one dir PATH
  * @command: command
  *
  * Return: pointer string + cmd or NULL error
@@ -83,7 +83,7 @@ void create_new_process(SimpleShell_t *shell)
   execve(
     shell->os_command_path,
     shell->command_args,
-    shell->environment,
+    shell->environment
   );
   if ((WIFEXITED(status)))
   (shell->exit_status) = WEXITSTATUS(status);
