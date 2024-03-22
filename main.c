@@ -9,8 +9,8 @@
 *Return: EXIT_SUCCESS (0) or EXIT_FAILURE (1)
 */
 int main(
-    __attribute__ ((unsused)) int argc,
-    __attribute__ ((unsused)) char *argv[],
+    __attribute__ ((unused)) int argc,
+    __attribute__ ((unused)) char *argv[],
     char **envp
 )
 {
