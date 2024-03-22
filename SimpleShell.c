@@ -46,6 +46,16 @@ void parse_line(SimpleShell_t *shell, char *new_line)
     free_array(shell->command_args);
     free(shell->os_command_path);
 }
+/**
+*free_shell - deallocates memory for the interpreter and its priorities
+*@shell: double pointer back to the simple shell
+*/
+void free_shell(SimpleShell_t *shell)
+{
+    free_array(shell->path_variable);
+
+    free(shell);
+}
 
 /**
 *free_array - deallocates memory allocated through split_string function
