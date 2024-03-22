@@ -13,8 +13,8 @@
 #define PATH_MAX 4096
 
 /**
-*struct _simpleShell - information representing current state of shell
-*@line_num: cuurent line number of script
+*struct _SimpleShell - information representing current state of shell
+*@line_num: current line number of script
 *@exit_status: EXIT_SUCCESS (0) or EXIT_FAILURE (!)
 *@is_active: TRUE (1) or FALSE (0) -- if REPL loop still open
 *@path_variable: path variable inherited from environment as string array
@@ -45,10 +45,10 @@ typedef struct _SimpleShell
 typedef struct BuiltInCommand_s
 {
     char *name;
-    void (*exec)(SimplyShell_t *self);
+    void (*exec)(SimpleShell_t *self);
 }BuiltInCommand_t;
 
-void launch_repl(SimpleShell_t *self);
+void launch_repl(SimpleShell_t *shell);
 void read_script(SimpleShell_t *shell);
 
 void create_shell(SimpleShell_t **shell, char **envp);
