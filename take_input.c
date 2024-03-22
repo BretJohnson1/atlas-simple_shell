@@ -33,7 +33,6 @@ char *take_input();
     buffer = strtok(buffer, new_line);
     /**checking for our only_spaces function and fills in accordingly*/
     if ((is_only_spaces(buffer)))
-      ;
     {
       buffer[0] = '\n';
       buffer[1] = '\0';
