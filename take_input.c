@@ -3,7 +3,7 @@
 /** take-input - Takes input and makes it safe to process
  * Return: Parased input from the user
  */
-char *take_input();
+char *take_input()
 {
   /** Storage for our string*/
   char *buffer;
@@ -46,7 +46,7 @@ char *take_input();
  * Return: 1 if the string is only spaces, 0 otherwise
  */
 
-int is_only_space(char *string)
+int is_only_spaces(char *string)
 {
   /**For the index of string*/
   int i = 0;

@@ -72,5 +72,5 @@ void read_script(SimpleShell_t *shell)
     fflush(NULL);
 
     }
-    while (shell->is_active == TRUE):
+    while (shell->is_active == TRUE);
 }

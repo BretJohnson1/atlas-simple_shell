@@ -81,8 +81,8 @@ void (*get_builtin(char *command))(SimpleShell_t *)
 {
     int i;
     BuiltInCommand_t builtins[] = {
-        {"exit", quit_rep1},
-        {"quit", quit_rep1},
+        {"exit", quit_repl},
+        {"quit", quit_repl},
         {"env", print_env_variables},
         {NULL, NULL}
     };

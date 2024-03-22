@@ -12,7 +12,7 @@ char *find_command_path(SimpleShell_t *shell)
   char *test_path;
   int i = 0;
 
-  command_path = malloc(sizeof(char) * 255)
+  command_path = malloc(sizeof(char) * 255);
 
       snprintf(command_path, 255, "%s", shell->command_args[0]);
 

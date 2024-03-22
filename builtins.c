@@ -20,5 +20,5 @@ void print_env_variables(SimpleShell_t *shell)
 
     do {
         printf("%s\n", shell->environment[i++]);
-    } while (shell->environemt[i]);
+    } while (shell->environment[i]);
 }
