@@ -20,3 +20,29 @@ void create_shell(SimpleShell_t **shell, char **envp)
     (*shell)->os_command_path = NULL;
     (*shell)->builtin = NULL;
 }
+
+/**
+*parse_line - parses an individual line taken from a script or the REPL
+*@shell: double pointer back to the simple shell
+*@new_line: the new line to be parsed
+*
+*Description: will require significant overhaul to support pipes
+*/
+void parse_line(SimpleShell_t *shell, char *new_line)
+{
+    shell->command_args = split_string(new_line, " ");
+
+    shell->builtin = get_builtin(shell->command_args[0]);
+
+    shell->os_command_path = find_command_path(shell);
+
+    if (shell->builtin != NULL)
+    shell->builtin(shell);
+    else if (shell->os_command_path != NULL)
+    create_new_process(shell);
+    else
+    throw_error(shell, 2);
+
+    free_array(shell->command_args);
+    free(shell->os_command_path);
+}
