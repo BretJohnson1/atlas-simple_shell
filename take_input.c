@@ -62,16 +62,16 @@ int is_only_space(char *string)
 }
 /**
  * split_string - Splits the string
- * @string_to_split - The string were breaking up
+ * @string_to_split - The string we are breaking up
  * @delimiter: where we are breaking the string up
- * Return: A double pointer which is a list of strings to split up
+ * Return: A double pointer which is a list of strings split up
  */
 char **split_string(char *string_to_split, char *delimiter)
 {
   /**return for our array after modification*/
   char **ret_array;
   /**For the index(spot in array)*/
-  int i = 0
+  int i = 0;
   /**length of the array using num_of_spaces, returns the amount of tokens = length*/
   long int length = num_of_spaces(string_to_split, delimiter);
   /**Copy from the STDIN(input)*/
@@ -82,7 +82,7 @@ char **split_string(char *string_to_split, char *delimiter)
 /**Takes input from string_to_split pointer and stores in copy_of_string*/
   snprintf(copy_of_string, 255, "%s", string_to_split);
 /**Memory allocated for a size by multiplying length times char(1) */
-  ret_array = malloc(sizeof(char*) * (length + 1));
+  ret_array = malloc(sizeof(char *) * (length + 1));
   /**So we can access the string for tokens from a copy_of_string*/
   save_pointer = copy_of_string;
 /** Grabs the the tokens from the amount of length exmp(length equals four so grabtoks 4 times)*/
@@ -98,8 +98,7 @@ char **split_string(char *string_to_split, char *delimiter)
   return (ret_array);
 }
 /**
- * num_of_spaces - Coints the number of buckets to allocate to store the data
- * when given a string delimiter of the data
+ * num_of_spaces - Counts the number of buckets to allocate to store the data when given a string delimiter of the data
  * @string: The string to evalute
  * @delimiter: The string that is breaking up str
  * Return: The number of spaces to store the data, trailing NULL excluded
