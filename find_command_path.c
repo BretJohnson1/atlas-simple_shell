@@ -93,3 +93,33 @@ void create_new_process(SimpleShell_t *shell)
     fflush(stdin);
   }
 }
+/**
+ * throw_error - display an error message by designated number
+ * @shell: double-pointer back to the interpreter (includes error num)
+ * @error_num: number to invoke corresponding error.
+*/
+void throw_error(SimpleShell_t *shell, int error_num)
+{
+  char specific_error[20];
+  char error_message[255];
+
+  if (error_num == 1)
+  snprintf(specific_error, 20, "%s", "Permission denied\n");
+  else if (error_num == 2)
+  snprintf(specific_error, 20, "%s", "Not Found\n");
+  else if (error_num == 3)
+  snprintf(specific_error, 20, "%s", "Can't open\n");
+  else
+  snprintf(specific_error, 20, "%s", "Unkown Error\n");
+
+  snprintf(
+    error_message,
+    255,
+    "%s: %d: %s: %s",
+    getenv("_"),
+    shell->line_num,
+    shell->command_args[0],
+    specific_error
+  );
+  fnprintf(stderr, "%s", error_message);
+}
