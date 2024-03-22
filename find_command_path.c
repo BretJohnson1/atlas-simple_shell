@@ -121,5 +121,5 @@ void throw_error(SimpleShell_t *shell, int error_num)
     shell->command_args[0],
     specific_error
   );
-  fnprintf(stderr, "%s", error_message);
+  fprintf(stderr, "%s", error_message);
 }
