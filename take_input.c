@@ -129,7 +129,7 @@ int num_of_spaces(char *string, char *delimiter)
       }
     }
     else
-    has_space == FALSE;
+    has_space = FALSE;
     i++;
   }
   /**Number of delims returned*/
