@@ -17,8 +17,10 @@ void quit_repl(SimpleShell_t *shell)
 void print_env_variables(SimpleShell_t *shell)
 {
     int i = 0;
-
+/**loop through each envrionment variable until a NULL pointer is encountered*/
     do {
+/**print the current envrionment variable to the standard output*/
         printf("%s\n", shell->environment[i++]);
+/**continue looping until a NULL pointer is reached*/
     } while (shell->environment[i]);
 }
