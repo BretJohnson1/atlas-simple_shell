@@ -48,7 +48,7 @@ char *line = NULL;
 /**loop until shell is active*/
 while (shell->is_active == TRUE)
 {
-	printf("($) ");
+	printf("(OMG what now!?) ");
 	line = take_input();
 	parse_line(shell, line);
 	free(line);
