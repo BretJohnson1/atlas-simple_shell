@@ -14,7 +14,7 @@ As of now our Shell...
 
 * Prompts the user
 	The shell will initalize itself replicating paths and enviroments.
-	If it fails it will free the memory of the input and flush out the nonsense, returning a "$" ready for another input.
+	If it fails it will free the memory of the input and flush out the nonsense, returning a "OMG what now!?" ready for another input.
 
 * Executes (Things)
 	Our shell can execute alot of the basic commands but also execute and executable file we may want to execute.
@@ -25,4 +25,15 @@ As of now our Shell...
 	The shell has State of the Scribblings *String Parsing* techonology and can very simply parse a string,
 	find spaces or commas and seperate them to effectively find tokens (arguments) to act on.
 
-*
+### More Info
+
+Thats alittle taste of the __TRUE POWER WE POSSESS__ and it will only increase with more hardwork and commitment.
+We did have *FuN* during this project alot of challenges, Like ALOT, but we really powered thru and it was great.
+
+*Authors
+	[Bret Johnson](https://github.com/BretJohnson1"The Man of the Hour.")
+	[Isaac Edwards](https://github.com/DTBissy"Another man of 60 mins.")
+
+*Credits
+	[Phind](https://www.phind.com/search?home=true"Quite the intellectual.")
+	[Intranet](https://intranet.atlasschool.com/concepts/900"GateKept secrets.")
