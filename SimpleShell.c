@@ -22,7 +22,8 @@ if (shell == NULL)
 ((*shell)->is_active) = TRUE;
 /**copy envrionment variables into the shell*/
 (*shell)->environment = envp;
-/**split path variables into an array of directories and assign it to path_variable*/
+/**split path variables into an array of directories and*/
+/** assign it to path_variable*/
 (*shell)->path_variable = split_string(getenv("PATH"), ":");
 /**set the os_command_path to NULL initially*/
 (*shell)->os_command_path = NULL;
@@ -41,7 +42,7 @@ void parse_line(SimpleShell_t *shell, char *new_line)
 {
 /**split the input line into individual command arguments*/
 shell->command_args = split_string(new_line, " ");
-/**determine if the command is a builtin command and assign the correspeonding function pointer*/
+/*sees if the command is a builtin command and assigns a function pointer*/
 shell->builtin = get_builtin(shell->command_args[0]);
 /**find the path of the os command executable*/
 shell->os_command_path = find_command_path(shell);
@@ -49,7 +50,8 @@ shell->os_command_path = find_command_path(shell);
 if (shell->builtin != NULL)
 	/**if it is a built in command, execute it*/
 	shell->builtin(shell);
-/**if the command is not a built in but the os command path is found, create a new process to execute it*/
+/**if the command is not built in but exists, create new process*/
+ /** to execute it*/
 else if (shell->os_command_path != NULL)
 	create_new_process(shell);
 /**if it is niether a built in or os, then throw error "not found"*/

@@ -40,10 +40,9 @@ return (NULL);
 }
 /**
 * create_test_path - Concatenate command argv[0] to each directory path
-*@dir_path : pointer to one dir PATH
-*@command : command
-*
-*Return : pointer string + cmd or NULL error
+*@dir_path: pointer to one dir PATH
+*@command: command
+*Return: pointer string + cmd or NULL error
 */
 char *create_test_path(char *dir_path, char *command)
 {
