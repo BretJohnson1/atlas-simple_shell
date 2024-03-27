@@ -33,10 +33,10 @@ As of now our Shell...
 Thats alittle taste of the __TRUE POWER WE POSSESS__ and it will only increase with more hardwork and commitment.
 We did have *FuN* during this project alot of challenges, Like ALOT, but we really powered thru and it was great.
 
-*Authors
-	[Bret Johnson](https://github.com/BretJohnson1"The Man of the Hour.")
-	[Isaac Edwards](https://github.com/DTBissy"Another man of 60 mins.")
+*Authors  
+	[Bret Johnson](https://github.com/BretJohnson1"The Man of the Hour.")  
+ 	[Isaac Edwards](https://github.com/DTBissy"Another man of 60 mins.")
 
-*Credits
-	[Phind](https://www.phind.com/search?home=true"Quite the intellectual.")
-	[Intranet](https://intranet.atlasschool.com/concepts/900"GateKept secrets.")
+*Credits  
+	[Phind](https://www.phind.com/search?home=true"Quite the intellectual.")  
+ 	[Intranet](https://intranet.atlasschool.com/concepts/900"GateKept secrets.")
