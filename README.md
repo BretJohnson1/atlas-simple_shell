@@ -8,7 +8,7 @@ A simple shell "simply" is a way for a user to interact with the UNIX system and
 
 Usually a terminal thats pre-installed comes with a shell, but as that one was created, We can create one too and so we __HAVE__.
 
-# What our Simply Shell is capable of
+### What our Simply Shell is capable of
 
 As of now our Shell...
 
@@ -17,18 +17,18 @@ As of now our Shell...
 	If it fails it will free the memory of the input and flush out the nonsense, returning a "OMG what now!?" ready for another input.
 
 * Executes (Things)  
-	Our shell can execute alot of the basic commands but also execute and executable file we may want to execute.
+	Our shell can execute alot of the basic commands but also execute any executable file we may want to execute.
 	The shell is also capable of executing files from _Outside_ its active state with out prompting the user.
 	This means we can quickly view things from inside the child process or from out.
 
 * Handling input  
-	The shell has State of the Scribblings *String Parsing* techonology and can very simply parse a string,
+	The shell has State of the Scribblings *String Parsing* technology and can very simply parse a string,
 	find spaces or commas and seperate them to effectively find tokens (arguments) to act on.
 
-### Atlas Requirements
+#### Atlas Requirements
 
 *
-#### More Info
+##### More Info
 
 Thats alittle taste of the __TRUE POWER WE POSSESS__ and it will only increase with more hardwork and commitment.
 We did have *FuN* during this project alot of challenges, Like ALOT, but we really powered thru and it was great.
