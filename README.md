@@ -21,7 +21,7 @@ As of now our Shell...
 	The shell is also capable of executing files from _Outside_ its active state with out prompting the user.
 	This means we can quickly view things from inside the child process or from out.
 
-* Handling input  
+* Handles input  
 	The shell has State of the Scribblings *String Parsing* technology and can very simply parse a string,
 	find spaces or commas and seperate them to effectively find tokens (arguments) to act on.
 
