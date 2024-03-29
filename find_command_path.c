@@ -103,8 +103,7 @@ else if (id == 0)
 	execve(
 		shell->os_command_path,
 		shell->command_args,
-    shell->environment
-  );
+    shell->environment);
   perror("execve failed");
   exit(EXIT_FAILURE);
 /** if child terminated normally,store the exit status in the shell structure*/
