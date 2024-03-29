@@ -84,35 +84,49 @@ return (test_path);
 *
 * Return: void
 */
-void create_new_process(SimpleShell_t *shell)
-{
-pid_t id;
-int status;
+void create_new_process(SimpleShell_t *shell) {
+    pid_t id;
+    int status;
 
-/** create a new process by forking the current process*/
-id = fork();
-/** check if fork failed*/
-if (id == -1)
-	perror("Fork failed");
-/** parent process (wait for child and store its exit status)*/
-else if (id > 0)
-	wait(&status);
-/** child process*/
-else if (id == 0)
-	/** execute the command in the child process using execve*/
-	execve(
-		shell->os_command_path,
-		shell->command_args,
-    shell->environment);
-/** if child terminated normally,store the exit status in the shell structure*/
-if ((WIFEXITED(status)))
-	(shell->exit_status) = WEXITSTATUS(status);
-/** flush the standard ouput and standard input buffers*/
-if (id != 0)
-{
-	fflush(stdout);
-	fflush(stdin);
-}
+    /** create a new process by forking the current process */
+    id = fork();
+    /** check if fork failed */
+    if (id == -1) {
+        perror("Fork failed");
+    }
+    /** parent process (wait for child and store its exit status) */
+    else if (id > 0) {
+        wait(&status);
+    }
+    /** child process */
+    else if (id == 0) {
+        /** Determine whether to use execve or execvp based on a condition */
+        if (shell->environment != NULL) {
+            /** execute the command in the child process using execve */
+            execve(
+                shell->os_command_path,
+                shell->command_args,
+                shell->environment
+            );
+        } else {
+            /** execute the command in the child process using execvp */
+            execvp(
+                shell->os_command_path,
+                shell->command_args
+            );
+            perror("execvp failed");
+            exit(EXIT_FAILURE);
+        }
+    }
+    /** if child terminated normally, store the exit status in the shell structure */
+    if (WIFEXITED(status)) {
+        shell->exit_status = WEXITSTATUS(status);
+    }
+    /** flush the standard output and standard input buffers */
+    if (id != 0) {
+        fflush(stdout);
+        fflush(stdin);
+    }
 }
 /**
 * throw_error - display an error message by designated number
