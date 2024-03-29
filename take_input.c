@@ -71,40 +71,65 @@ return (TRUE);
 */
 char **split_string(char *string_to_split, char *delimiter)
 {
-/**return for our array after modification*/
 char **ret_array;
-
-/**For the index(spot in array)*/
-int i = 0;
-
-/**length of array using num_of_spaces, returns the amount of tokens = length*/
-long int length = num_of_spaces(string_to_split, delimiter);
-
-/**Copy from the STDIN(input)*/
-char copy_of_string[255];
-
-/**Next two are a must for strtok_r */
-char *save_pointer;
-
-char *grabtok;
-
-/**Takes input from string_to_split pointer and stores in copy_of_string*/
-snprintf(copy_of_string, 255, "%s", string_to_split);
-/**Memory allocated for a size by multiplying length times char(1) */
-ret_array = malloc(sizeof(char *) * (length + 1));
-/**So we can access the string for tokens from a copy_of_string*/
-save_pointer = copy_of_string;
-/** Gets the tokens from the length exmp(length is four so grabtoks 4 toks)*/
+int i = 0, j = 0, k = 0, b = 0;
+int length = strlen(string_to_split);
+int num_of_tokens = 0;
+int delimiter_length = strlen(delimiter);
+/** Counts the number of tokens*/
 for (i = 0; i < length; i++)
 {
-	/**save_pointer = copy_of_string &save_pointer = */
-	grabtok = strtok_r(save_pointer, delimiter, &save_pointer);
-	ret_array[i] = malloc(sizeof(char) * 255);
-	/**Allocating and storing each token from grabtok in an array index + 1*/
-	snprintf(ret_array[i], 255, "%s", grabtok);
+  if (strncmp(&string_to_split[i], delimiter, delimiter_length) == 0)
+  {
+    num_of_tokens++;
+    i += delimiter_length - 1; /**skips delimiter*/
+  }
 }
-ret_array[i] = NULL;
-return (ret_array);
+/**for the last token*/
+num_of_tokens++;
+
+ret_array = malloc(sizeof(char *) * (num_of_tokens + 1));
+if (ret_array == NULL)
+{
+  return (NULL);
+}
+/**Allocates memory for each token into array*/
+for (i = 0, k = 0; i < length; i++)
+{
+  if (strncmp(&string_to_split[i], delimiter, delimiter_length) == 0)
+  {
+    ret_array[k] = malloc(sizeof(char) * (i - j + 1));
+    if (ret_array[k] == NULL)
+    {
+      for (b = 0; b < k; b++)
+      {
+        free(ret_array[b]);
+      }
+      free(ret_array);
+      return (NULL);
+    }
+    strncpy(ret_array[k], &string_to_split[j], i - j);
+    ret_array[k][i - j] = '\0';
+    k++;
+    i += delimiter_length - 1;
+    j = i + 1;
+  }
+}
+ret_array[k] = malloc(sizeof(char) * (length - j + 1));
+if (ret_array[k] == NULL)
+{
+  for (b = 0; b <= k; b++)
+  {
+    free(ret_array[b]);
+  }
+  free(ret_array);
+  return (NULL);
+}
+strncpy(ret_array[k], &string_to_split[j], length -j);
+ret_array[k][length - j] = '\0';
+k++;
+ret_array[k] = NULL;
+return ret_array;
 }
 /**
 * num_of_spaces - Gets length of buckets to allocate data from a string delim
