@@ -78,7 +78,7 @@ void (*get_builtin(char *command))(SimpleShell_t *);
 void clear_screen(SimpleShell_t *self);
 void quit_repl(SimpleShell_t *self);
 void print_env_variables(SimpleShell_t *self);
-char *_getenv(char **envp, char *key);
+char *_getenv(char **envp, const char *key);
 
 char *find_command_path(SimpleShell_t *self);
 char *create_test_path(char *dir_path, char *command);

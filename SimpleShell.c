@@ -24,7 +24,7 @@ if (shell == NULL)
 (*shell)->environment = envp;
 /**split path variables into an array of directories and*/
 /** assign it to path_variable*/
-(*shell)->path_variable = split_string(getenv("PATH"), ":");
+(*shell)->path_variable = split_string(_getenv(envp, "PATH"), ":");
 /**set the os_command_path to NULL initially*/
 (*shell)->os_command_path = NULL;
 /**set the builtin command to NULL initially*/
