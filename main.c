@@ -9,9 +9,9 @@
 *Return: EXIT_SUCCESS (0) or EXIT_FAILURE (1)
 */
 int main(
-	__attribute__((unused)) int argc,
+	__attribute__ ((unused)) int argc,
 
-	__attribute__((unused)) char *argv[],
+	__attribute__ ((unused)) char *argv[],
 
 	char **envp)
 {
@@ -83,6 +83,5 @@ do {
 
 }
 /**continue looping while the shell is active*/
-while
-(shell->is_active == TRUE);
+while (shell->is_active == TRUE);
 }

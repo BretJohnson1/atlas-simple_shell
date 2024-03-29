@@ -27,7 +27,8 @@ while (shell->path_variable[i])
 	/** create a test path by combining the current path with the command name*/
 	test_path = create_test_path(
 		shell->path_variable[i++],
-		shell->command_args[0]);
+		shell->command_args[0]
+    );
 	/** update the command path with the test path*/
 	snprintf(command_path, 255, "%s", test_path);
 	/** free the memory allocated for the testpath*/

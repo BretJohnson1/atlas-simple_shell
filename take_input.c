@@ -21,7 +21,7 @@ buffer = malloc(sizeof(char) * 255);
 /**Recieves the Input from STDIN(input) and feeds it to buffer and n */
 check = (getline(&buffer, &n, stdin));
 /**Pretty much for if the user hits enter without typing anything*/
-if (check == 1)
+if (check == -1)
 {
 	free(buffer);
 	return (NULL);
