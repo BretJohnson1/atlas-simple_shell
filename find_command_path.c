@@ -100,11 +100,12 @@ else if (id > 0)
 /** child process*/
 else if (id == 0)
 	/** execute the command in the child process using execve*/
-	execvp(
+	execve(
 		shell->os_command_path,
-		shell->command_args
+		shell->command_args,
+    shell->environment
   );
-  perror("execvp failed");
+  perror("execve failed");
   exit(EXIT_FAILURE);
 /** if child terminated normally,store the exit status in the shell structure*/
 if ((WIFEXITED(status)))
