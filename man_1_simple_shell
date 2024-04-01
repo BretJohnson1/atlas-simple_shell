@@ -5,25 +5,15 @@ LIBRARY
 N/A
 
 SYNOPSIS
-void launch_repl(SimpleShell_t *shell);
-void read_script(SimpleShell_t *shell);
-void create_shell(SimpleShell_t **shell, char **envp);
-void parse_line(SimpleShell_t *shell, char *new_line);
-void free_shell(SimpleShell_t *shell);
-void free_array(char **an_array);
-char *take_input();
-int is_only_spaces(char *string);
-int num_of_spaces(char *string, char *delimiter);
-char **split_string(char *string_to_split, char *delimiter);
-void (*get_builtin(char *command))(SimpleShell_t *);
-void clear_screen(SimpleShell_t *self);
-void quit_repl(SimpleShell_t *self);
-void print_env_variables(SimpleShell_t *self);
-char *_getenv(char **envp, char *key);
-char *find_command_path(SimpleShell_t *self);
-char *create_test_path(char *dir_path, char *command);
-void create_new_process(SimpleShell_t *shell);
-void throw_error(SimpleShell_t *shell, int error_num);
+void tokenize_string(char *str, char *delims, char **tokens);
+int make_a_baby(char *stdpath, char *call_path, char **str_arr);
+int check_path(char *stdpath, char **path_array, char **token_array);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
+int _strncmp(char *s1, char *s2, int n);
+int _strcmp(char *s1, char *s2);
+char *_strdup(char *str);
 
 DESCRIPTION
 This simple shell recreation acts like your standard terminal, receiving input, evaluating input, implementing input and repeating. It is able to take basic commands to help the user navigate the terminal and execute basic systems and functions in the terminal.
