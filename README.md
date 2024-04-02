@@ -25,9 +25,6 @@ As of now our Shell...
 	The shell has State of the Scribblings *String Parsing* technology and can very simply parse a string,
 	find spaces or commas and seperate them to effectively find tokens (arguments) to act on.
 
-#### Atlas Requirements
-
-*
 ##### More Info
 
 Thats alittle taste of the __TRUE POWER WE POSSESS__ and it will only increase with more hardwork and commitment.
